@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание</title>
+        <meta name="description" content="Пример задания">
+        <link rel="stylesheet" href="styles/style.css" type="text/css">
+        <script defer src="js/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src = "https://i.ibb.co/xmKqzRv/logo.png">
+                <h1>крутой сайт😎</h1>
+            </div>
+                        
+            <nav>
+                <a href = "#w">что то</a>
+                <a href = "#s">что то2</a>
+                <a href = "#d">что то3</a>
+                <a href = "#a">что то4</a>
+            </nav>
+            <div id="slider">
+                <div class="slide-img" id="slide-img1" style="background-image: url(https://t4.ftcdn.net/jpg/08/22/74/97/360_F_822749709_uJaxwsqCxX9XTyVTMllH9jtXsN8t1fnK.jpg)">
+                </div>
+                <div class="slide-img" id="slide-img2" style="background-image: url(https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F82rmlo6g03ysxh0wg7mz.jpg)">
+                </div>
+                <div class="slide-img" id="slide-img3" style="background-image: url(https://t3.ftcdn.net/jpg/09/31/03/82/360_F_931038209_4cT1tbWb4iWIx4mjKFLIn65mRZ83b9BQ.jpg)">
+                </div>
+                <div id="dec"></div>
+            </div>
+        </header>
+        <main>
+            <section id="w">
+                <h2>sadasd1</h2>
+            </section>
+            <section id="s">
+                <h2>sadasd2</h2>            
+            </section>
+            <section id="d">
+                <h2>sadasd3</h2>                
+            </section>
+            <section id="a">
+                <h2>sadasd4</h2>           
+            </section>
+            <div id="timer">
+                
+                До конца скидки:
+                <span id="saleDays"></span>
+                <span id="saleHours"></span>
+                <span id="saleMinutes"></span>
+                <span id="saleSeconds"></span>
+                <img src="https://optim.tildacdn.com/tild3164-6132-4666-a131-663134396162/-/format/webp/photo.png.webp">
+            </div>
+            <form id="contactForm">
+                <h2>оставить заявку</h2>
+                <label for="formName">
+                    <span id="nameMessage"></span>
+                    <input id="formName" type="text" placeholder="Ваше имя" onchange="changeName(this.value, userName)">
+                </label>
+                <label for="formPhone">
+                    <span id="phoneMessage"></span>
+                    <input id="formPhone" type="text" placeholder="Ваш номер телефона" onchange="changeNumber(this.value, number)">
+                </label>
+                <label for="formArgeement">
+                    <span id="argeementMessage"></span>
+                    <input id="formAgreement" type="checkbox" checked>
+                    <p>Согласен на обработку переданных контактных данных</p>
+                </label>
+                <button id="formButton">ОТПРАВИТЬ</button>
+            </form>
+            <div id="popUp"></div>
+        </main>
+        <footer> 
+            <div id="footerDiv"></div> 
+        </footer>
+    </body>
+</html>
