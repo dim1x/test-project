@@ -259,7 +259,7 @@ label p {
     background-color: gray;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     
 
     #w {
