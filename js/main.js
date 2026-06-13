@@ -72,23 +72,29 @@ const dec = document.getElementById("dec")
 
 const firstBut = document.createElement('div')
     firstBut.innerText = "<"
-    dec.append(firstBut)
+    slider.append(firstBut)
     firstBut.style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
     firstBut.style.height = '20px'
     firstBut.style.width = '20px'
-    firstBut.style.marginTop = '-70px'
-    firstBut.style.marginLeft = '10px'
+    firstBut.style.marginLeft = "2%"
+    firstBut.style.marginRight = "98%"
     firstBut.style.borderRadius = '10px' 
+    firstBut.style.position = "relative"
+    firstBut.style.bottom = "80px"
 
 const lastBut = document.createElement('div')
     lastBut.innerText = ">"
-    dec.append(lastBut)
+    slider.append(lastBut)
     lastBut.style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
     lastBut.style.height = '20px'
     lastBut.style.width = '20px'
-    lastBut.style.marginTop = '-20px'
     lastBut.style.marginLeft = '96%'
+    lastBut.style.marginRight = '2%'
     lastBut.style.borderRadius = '10px' 
+    lastBut.style.position = "relative"
+    lastBut.style.bottom = "100px"
+    
+
 
 const tochka1 = document.createElement('div')
     dec.append(tochka1)
@@ -96,8 +102,6 @@ const tochka1 = document.createElement('div')
     tochka1.style.height = "15px"
     tochka1.style.width = "15px"
     tochka1.style.borderRadius = "10px"
-    tochka1.style.marginLeft = "250px"
-    tochka1.style.marginTop = "20px"
 
 const tochka2 = document.createElement('div')
     dec.append(tochka2)
@@ -105,8 +109,7 @@ const tochka2 = document.createElement('div')
     tochka2.style.height = "15px"
     tochka2.style.width = "15px"
     tochka2.style.borderRadius = "10px"
-    tochka2.style.marginLeft = "280px"
-    tochka2.style.marginTop = "-15px"
+    tochka2.style.marginLeft = "10px"
 
 const tochka3 = document.createElement('div')
     dec.append(tochka3)
@@ -114,23 +117,69 @@ const tochka3 = document.createElement('div')
     tochka3.style.height = "15px"
     tochka3.style.width = "15px"
     tochka3.style.borderRadius = "10px"
-    tochka3.style.marginLeft = "310px"
-    tochka3.style.marginTop = "-15px"
+    tochka3.style.marginLeft = "10px"
 
 const sliderImg1 = document.getElementById("slide-img1")
 const sliderImg2 = document.getElementById("slide-img2")
 const sliderImg3 = document.getElementById("slide-img3")
+let slidersM = [sliderImg1, sliderImg2, sliderImg3]
+let tochkiM = [tochka1, tochka2, tochka3]
+let i = 0
 
 lastBut.addEventListener("click", function() {
-    if (sliderImg2.style.display === "none" && sliderImg3.style.display === "none") {
+
+    slidersM[i].style.display = "block"
+    tochkiM[i].style.backgroundColor = "white"
+    if (i === 0) {
+        tochkiM[1].style.backgroundColor = "gray"
+    } else if (i === 1) {
+        tochkiM[2].style.backgroundColor = "gray" 
+        slidersM[0].style.display = "none"      
+    }
+    
+    sliderImg3.style.display = "none"
+    
+    i++
+    if (i > 2) {
+        i = 0
+        sliderImg2.style.display = "none"
+        sliderImg1.style.display = "none"
         sliderImg3.style.display = "block"
-    }        
+        tochka3.style.backgroundColor = "white"
+        tochka1.style.backgroundColor = "gray"
+    }
+               
+})
+
+firstBut.addEventListener("click", function() {
+    if (i === 2) {
+        sliderImg2.style.display = "none"
+        sliderImg1.style.display = "block"
+        sliderImg3.style.display = "none" 
+        tochka3.style.backgroundColor = "white"
+        tochka2.style.backgroundColor = "gray"      
+    } else if (i === 1) {
+        sliderImg2.style.display = "none"
+        sliderImg1.style.display = "none"
+        sliderImg3.style.display = "block"
+        tochka2.style.backgroundColor = "white"
+        tochka1.style.backgroundColor = "gray"
+    }
+    i -= 1
+    if (i < 0) {
+        i = 2
+        sliderImg2.style.display = "block"
+        sliderImg1.style.display = "none"
+        sliderImg3.style.display = "none"
+        tochka1.style.backgroundColor = "white"
+        tochka3.style.backgroundColor = "gray"
+    }
 })
 
 
 
 //форма заказа
-const popUp = getElementById('popUp')
+const popUp = document.getElementById("popUp")
 popUp.onclick = () => popUp.style.display = 'none' 
 let userName = '' 
 let number = ''
